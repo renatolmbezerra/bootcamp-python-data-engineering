@@ -3,3 +3,4 @@
 nome = input("Digite o seu nome: ")
 num_caract = len(nome)
 print(num_caract)
+print("teste")
