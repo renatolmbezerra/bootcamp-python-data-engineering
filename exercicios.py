@@ -77,7 +77,13 @@ print(frase.strip())
 
 # 14. Faça um programa que peça ao usuário para digitar uma data no formato "dd/mm/aaaa" e, em seguida, imprima o dia, o mês e o ano separadamente.
 data = input("Digite uma data no formato dd/mm/aaaa: ")
-print(data.split("/"))
+data_lista = data.split("/")
+dia = data_lista[0]
+mes = data_lista[1]
+ano = data_lista[2]
+print(f"O primeiro elemento é {dia}")
+print(f"O segundo elemento é {mes}")
+print(f"O terceiro elemento é {ano}")
 
 # 15. Escreva um programa que concatene duas strings fornecidas pelo usuário.
 str1 = input("Digite a primeira palavra: ")
@@ -88,10 +94,32 @@ print(juncao)
 # #### Booleanos (`bool`)
 
 # 16. Escreva um programa que avalie duas expressões booleanas inseridas pelo usuário e retorne o resultado da operação AND entre elas.
+expr1 = bool(input("Digite um valor boleano (true ou false): "))
+expr2 = bool(input("Digite outro valor boleano (true ou false): "))
+result = expr1 and expr2
+print(result)
+
 # 17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
+expr1 = bool(input("Digite um valor boleano (true ou false): "))
+expr2 = bool(input("Digite outro valor boleano (true ou false): "))
+result = expr1 or expr2
+print(result)
+
 # 18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
+expr = bool(input("Digite um valor boleano (true ou false): "))
+print(not expr)
+
 # 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
+n1 = float(input("Digite o primeiro número: "))
+n2 = float(input("Digite o segundo número: "))
+r = n1 == n2
+print(f"O resultado a igualdade é: {r}")
+
 # 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
+n1 = float(input("Digite o primeiro número: "))
+n2 = float(input("Digite o segundo número: "))
+r = n1 != n2
+print(f"O resultado a diferença é: {r}")
 
 # #### try-except e if
 
