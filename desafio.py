@@ -3,9 +3,23 @@ CONSTANTE_BONUS = 1000
 # 1) Solicita ao usuário que digite seu nome
 nome_usuario = input("Digite o seu nome: ")
 
+if nome_usuario.isdigit():
+    print("Digite um nome válido")
+    exit()
+elif len(nome_usuario) == 0:
+    print("Você não digitou nada")
+    exit()
+elif nome_usuario.isspace():
+    print("Digite apenas espaços. Digite um noma válido.")
+    exit()
+
 # 2) Solicita ao usuário que digite o valor do seu salário
 # Converte a entrada para um número de ponto flutuante
-salario_usuario = float(input("Digite o seu salario: "))
+try:
+    salario_usuario = float(input("Digite o seu salario: "))
+except ValueError:
+    print("Erro: Digite um número válido.")
+
 
 # 3) Solicita ao usuário que digite o valor do bônus recebido
 # Converte a entrada para um número de ponto flutuante
