@@ -10,7 +10,7 @@ bonus_valido = False
 
 while nome_valido is not True: 
     try:
-        nome = "Renato5" #input("Digite seu nome: ")
+        nome = input("Digite seu nome: ")
 
         # Verifica se o nome está vazio
         if len(nome) == 0:
@@ -28,7 +28,7 @@ while nome_valido is not True:
 
 while salario_valido is not True:
     try:
-        salario = 2000 # float(input("Digite o valor do seu salário: "))
+        salario = float(input("Digite o valor do seu salário: "))
         if salario < 0:
             print("Por favor, digite um valor positivo para o salário.")
         else:
@@ -39,7 +39,7 @@ while salario_valido is not True:
 # Solicita ao usuário que digite o valor do bônus recebido e converte para float
 while bonus_valido is not True:
     try:
-        bonus = 3.0 # float(input("Digite o valor do bônus recebido: "))
+        bonus = float(input("Digite o valor do bônus recebido: "))
         if bonus < 0:
             print("Por favor, digite um valor positivo para o bônus.")
         else:
