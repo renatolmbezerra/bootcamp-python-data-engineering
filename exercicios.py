@@ -127,32 +127,39 @@ from datetime import date
 #     print(f"    => Na partida {i}, fez {v} gols.")
 # print(f"Foi um total de {sum(gols)} gols.")
 
-# 94. Crie um programa que leia nome, sexo e idade de várias pessoas, guardando os dados de cada
-# pessoa em um dicionário e todos os dicionários em uma lista. No final, mostre:
-# a) Quantos pessoas cadastradas.
-# b) A média de idade.
-# c) Uma lista com mulheres.
-# d) Uma lista com idade acima da média
+# # 94. Crie um programa que leia nome, sexo e idade de várias pessoas, guardando os dados de cada
+# # pessoa em um dicionário e todos os dicionários em uma lista. No final, mostre:
+# # a) Quantos pessoas cadastradas.
+# # b) A média de idade.
+# # c) Uma lista com mulheres.
+# # d) Uma lista com idade acima da média
 
-galera: list = []
-pessoa: dict = {}
+# galera: list = []
+# pessoa: dict = {}
 
-while True:
-    pessoa.clear()
-    pessoa['nome'] = str(input('Nome: '))
-    while True:
-        pessoa['Sexo'] = str(input('Sexo: ')).upper()[0]
-        if pessoa['Sexo'] in 'MF':
-            break
-        print('ERRO! Por favor, digite apenas M ou F.')
-    pessoa['idade'] = int(input('Idade: '))
-    galera.append(pessoa.copy())
-    while True:
-        resp = str(input('Quer continuar?')).upper()[0]
-        if resp in 'SN':
-            break
-        print('ERRO! Responda apenas S ou N')
-    if resp == 'N':
-        break
-print('-=' * 30)
-print(galera)
+# while True:
+#     pessoa.clear()
+#     pessoa['nome'] = str(input('Nome: '))
+#     while True:
+#         pessoa['Sexo'] = str(input('Sexo: ')).upper()[0]
+#         if pessoa['Sexo'] in 'MF':
+#             break
+#         print('ERRO! Por favor, digite apenas M ou F.')
+#     pessoa['idade'] = int(input('Idade: '))
+#     galera.append(pessoa.copy())
+#     while True:
+#         resp = str(input('Quer continuar? ')).upper()[0]
+#         if resp in 'SN':
+#             break
+#         print('ERRO! Responda apenas S ou N')
+#     if resp == 'N':
+#         break
+# print('-=' * 30)
+# print(galera)
+
+
+estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+
+estoque_positivo = {produto: quantidade for produto, quantidade in estoque.items() if quantidade > 0}
+
+print(estoque_positivo)
