@@ -1,7 +1,6 @@
-from csv import reader
-from collections import defaultdict
 import time
-
+from collections import defaultdict
+from csv import reader
 from pathlib import Path
 
 
