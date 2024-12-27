@@ -22,6 +22,7 @@ atributo = 'SP'
 
 arquivo_CSV = CsvProcessor(arquivo_csv)
 arquivo_CSV.carregar_csv()
-arquivo_CSV.filtrar_por(coluna,atributo)
+print(arquivo_CSV.filtrar_por(coluna,atributo))
+
 
 
