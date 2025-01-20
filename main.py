@@ -9,6 +9,11 @@ app = FastAPI()
 
 models.Base.metadata.create_all(bind=database.engine)
 
+@app.get("/")
+def home():
+    return {"message": "Hello World"}
+
+# Criar um item
 @app.post("/items/", response_model=Item)
 def create_item(item: ItemCreate, db: Session = Depends(database.get_db)):
     db_item = models.Item(**item.dict())
@@ -17,11 +22,13 @@ def create_item(item: ItemCreate, db: Session = Depends(database.get_db)):
     db.refresh(db_item)
     return db_item
 
+# Ler vários itens inserindo um intervalo de ids
 @app.get("/items/", response_model=List[Item])
 def read_items(skip: int = 0, limit: int = 10, db: Session = Depends(database.get_db)):
     items = db.query(models.Item).offset(skip).limit(limit).all()
     return items
 
+# Ler um item informando um id
 @app.get("/items/{item_id}", response_model=Item)
 def read_item(item_id: int, db: Session = Depends(database.get_db)):
     db_item = db.query(models.Item).filter(models.Item.id == item_id).first()
@@ -29,6 +36,7 @@ def read_item(item_id: int, db: Session = Depends(database.get_db)):
         raise HTTPException(status_code=404, detail="Item not found")
     return db_item
 
+# Fazer um update em um item existente informando um id
 @app.put("/items/{item_id}", response_model=Item)
 def update_item(item_id: int, item: ItemCreate, db: Session = Depends(database.get_db)):
     db_item = db.query(models.Item).filter(models.Item.id == item_id).first()
@@ -40,6 +48,7 @@ def update_item(item_id: int, item: ItemCreate, db: Session = Depends(database.g
     db.refresh(db_item)
     return db_item
 
+# Deletar um item existente informando um id
 @app.delete("/items/{item_id}", response_model=Item)
 def delete_item(item_id: int, db: Session = Depends(database.get_db)):
     db_item = db.query(models.Item).filter(models.Item.id == item_id).first()
