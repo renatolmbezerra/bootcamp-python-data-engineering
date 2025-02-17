@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgres/mydatabase"
 
-# Cria o motor do banco de dados, é o conecta com o banco
+# Cria o motor do banco de dados, é a conexão com o banco
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 # Sessão de banco de dados, é quem vai executar as queries
