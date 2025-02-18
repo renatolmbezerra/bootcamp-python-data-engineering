@@ -3,12 +3,14 @@ from enum import Enum
 from datetime import datetime
 from typing import Optional
 
+
 class CategoriaBase(Enum):
     categoria1 = "Eletrônico"
     categoria2 = "Eletrodoméstico"
     categoria3 = "Móveis"
     categoria4 = "Roupas"
     categoria5 = "Calçados"
+
 
 class ProductBase(BaseModel):
     name: str
@@ -17,15 +19,24 @@ class ProductBase(BaseModel):
     categoria: str
     email_fornecedor: EmailStr
 
+    @validator("categoria")
+    def check_categoria(cls, v):
+        if v in [item.value for item in CategoriaBase]:
+            return v
+        raise ValueError("Categoria inválida")
+
+
 class ProductCreate(ProductBase):
     pass
+
 
 class ProductResponse(ProductBase):
     id: int
     created_at: datetime
 
     class Config:
-        from_attritutes = True
+        orm_mode = True
+
 
 class ProductUpdate(BaseModel):
     name: Optional[str] = None

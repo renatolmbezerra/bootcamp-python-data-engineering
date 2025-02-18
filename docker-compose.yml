@@ -7,10 +7,24 @@ services:
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_USER: user
-      POSTGRES_PASSWORD: password    
+      POSTGRES_PASSWORD: password
     networks:
-      - mynetwork 
+      - mynetwork
+
   backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    environment:
+      DATABASE_URL: postgresql://user:password@postgres/mydatabase
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - mynetwork
 networks:
   mynetwork:
 
