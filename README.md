@@ -1,6 +1,6 @@
-# Bootcamp Python para Engenharia de Dados 🐍⚡
+# Bootcamp Python para Engenharia de Dados
 
-Repositório consolidado contendo **20 aulas/projetos** do Bootcamp Python, organizados para demonstrar minha jornada rumo à Engenharia de Dados.
+Repositório consolidado contendo **20 aulas/projetos** do Bootcamp Python, organizados para demonstrar minha jornada na Engenharia de Dados.
 
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/SEU_USER/bootcamp-python-data-engineering)](https://github.com/SEU_USER/bootcamp-python-data-engineering)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
